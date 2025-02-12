@@ -1,9 +1,13 @@
 name: Docker
 
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
+# Workflow: Sign with cosign user generated keys and upload to Github Container Registry (ghcr.io)
+# Installs the cosign tool
+# Sets up Docker container Builder to build multi-platform images
+# Logs in github container registry
+# Extracts metadata for better tagging
+# Builds and pushes the image to ghcr.io
+# Signs the resulting container image digest with user's cosign private key
+# The COSIGN_PRIVATE_KEY and COSIGN_PUBLIC_KEY are previously uploaded to the github repository
 
 on:
   #schedule:
